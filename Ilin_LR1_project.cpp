@@ -3,7 +3,9 @@
 using namespace std;
 
 // Объявление функций
-void inputNumbers(double &x, double &y, double &z);
+void inputNumberX(double &x);
+void inputNumberY(double &y);
+void inputNumberZ(double &z);
 void calculateFractionalSum(double x, double y, double z);
 void calculateIntegerSum(double x, double y, double z);
 
@@ -23,13 +25,14 @@ int main() {
 
         switch (choice) {
             case 1:
-                cout << "Введите число x: ";
-                cin >> x;
-                cout << "Введите число y: ";
-                cin >> y;
-                cout << "Введите число z: ";
-                cin >> z;
+                inputNumberX(x, y, z);
                 break;
+            case 2:
+                inputNumberY(x, y, z);
+                break;
+            case 3:
+                inputNumberZ(x, y, z);
+                break;    
             case 2:
                 calculateFractionalSum(x, y, z);
                 break;
@@ -46,24 +49,35 @@ int main() {
 }
 
 // Функция для ввода чисел
-void inputNumbers(double &x, double &y, double &z) {
+void inputNumberX(double &x) {
     cout << "Введите число x: ";
     cin >> x;
+}
+void inputNumberY(double &y) {
     cout << "Введите число y: ";
     cin >> y;
-    cout << "Введите число z: ";
+    cout << "Число Y успешно введено." << endl;
+}
+void inputNumberZ(double &z) {
     cin >> z;
-    cout << "Числа успешно введены." << endl;
+    cout << "Число Z успешно введено." << endl;
 }
-
-// Функция для вычисления суммы дробных частей (реализация пока пуста)
+// Функция для вычисления суммы дробных частей 
 void calculateFractionalSum(double x, double y, double z) {
-    // Реализация будет добавлена
-    cout << "Функция вычисления суммы дробных частей пока не реализована." << endl;
+    double fractionalX = x - floor(x);
+    double fractionalY = y - floor(y);
+    double fractionalZ = z - floor(z);
+    double sum = fractionalX + fractionalY + fractionalZ;
+
+    cout << "Сумма дробных частей: " << sum << endl;
 }
 
-// Функция для вычисления суммы целых частей (реализация пока пуста)
+// Функция для вычисления суммы целых частей 
 void calculateIntegerSum(double x, double y, double z) {
-    // Реализация будет добавлена
-    cout << "Функция вычисления суммы целых частей пока не реализована." << endl;
+    int integerX = static_cast<int>(x);
+    int integerY = static_cast<int>(y);
+    int integerZ = static_cast<int>(z);
+    int sum = integerX + integerY + integerZ;
+
+    cout << "Сумма целых частей: " << sum << endl;
 }
