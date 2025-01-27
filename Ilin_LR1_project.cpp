@@ -16,30 +16,32 @@ int main() {
     while (true) {
         // Меню приложения
         cout << "\n=== Меню ===" << endl;
-        cout << "1. Ввести числа x, y, z" << endl;
-        cout << "2. Найти сумму дробных частей чисел" << endl;
-        cout << "3. Найти сумму целых частей чисел" << endl;
-        cout << "4. Выход" << endl;
+        cout << "1. Ввести число x" << endl;
+        cout << "2. Ввести число y" << endl;
+        cout << "3. Ввести число z" << endl;
+        cout << "4. Найти сумму дробных частей чисел" << endl;
+        cout << "5. Найти сумму целых частей чисел" << endl;
+        cout << "6. Выход" << endl;
         cout << "Выберите действие: ";
         cin >> choice;
 
         switch (choice) {
             case 1:
-                inputNumberX(x, y, z);
+                inputNumberX(x);
                 break;
             case 2:
-                inputNumberY(x, y, z);
+                inputNumberY(y);
                 break;
             case 3:
-                inputNumberZ(x, y, z);
+                inputNumberZ(z);
                 break;    
-            case 2:
+            case 4:
                 calculateFractionalSum(x, y, z);
                 break;
-            case 3:
+            case 5:
                 calculateIntegerSum(x, y, z);
                 break;
-            case 4:
+            case 6:
                 cout << "Выход из программы." << endl;
                 return 0;
             default:
